@@ -1,4 +1,4 @@
-# [Crop-Yield-Prediction]
+# Crop-Yield-Prediction
 
 
 ## Contribution Guidelines
@@ -14,7 +14,7 @@
 
     ├── LICENSE
     ├── README.md          <- The top-level README for developers/collaborators using this project.
-    ├── original           <- Original Source Code of the challenge hosted by omdena. Can be used as a reference code for the current project goal.
+    ├── Source Code        <- Source Code references. Reference code for the current project goal.
     │ 
     │
     ├── reports            <- Folder containing the final reports/results of this project
@@ -38,7 +38,7 @@
 
 ## Folder Overview
 
-- Original          - Folder Containing old/completed Omdena challenge code.
+- Code References   - Folder Containing references code.
 - Reports           - Folder to store all Final Reports of this project
 - Data              - Folder to Store all the data collected and used for this project 
 - Docs              - Folder for Task documentations, Meeting Presentations and task Workflow Documents and Diagrams.
@@ -46,7 +46,7 @@
 - Tasks             - Master folder for all tasks
   - All Task Folder names should follow specific naming convention
   - All Task folder names should be in chronologial order (from 1 to n)
-  - All Task folders should have a README.md file with task Details and task goals along with an info table containing all code/notebook files with their links and information
+  - All Task folders should have a README.md file with task details and task goals along with an info table containing all code/notebook files with their links and information
   - Update the [task-table](./src/tasks/README.md#task-table) whenever a task is created and explain the purpose and goals of the task to others.
 - Visualization     - Folder to store dashboards, analysis and visualization reports
 - Results           - Folder to store final analysis modelling results for the project.
