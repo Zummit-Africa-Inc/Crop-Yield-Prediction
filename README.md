@@ -14,7 +14,7 @@
 
     ├── LICENSE
     ├── README.md          <- The top-level README for developers/collaborators using this project.
-    ├── Source Code        <- Source Code references. Reference code for the current project goal.
+    ├── source-code        <- Source Code references. Reference to external code for the current project goal.
     │ 
     │
     ├── reports            <- Folder containing the final reports/results of this project
