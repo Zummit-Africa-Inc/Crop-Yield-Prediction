@@ -12,28 +12,27 @@
 
 ## Project Structure
 
-    ├── LICENSE
     ├── README.md          <- The top-level README for developers/collaborators using this project.
-    ├── source-code        <- Source Code references. Reference to external code for the current project goal.
+    ├── Source-Code        <- Source Code references. Reference to external code for the current project goal.
     │ 
     │
-    ├── reports            <- Folder containing the final reports/results of this project
+    ├── Reports            <- Folder containing the final reports/results of this project
     │   └── README.md      <- Details about final reports and analysis
     │ 
     │   
-    ├── src                <- Source code folder for this project
+    ├── Src                <- Source code folder for this project
         │
-        ├── data           <- Datasets used and collected for this project
+        ├── Data           <- Datasets used and collected for this project
         │   
-        ├── docs           <- Folder for Task documentations, Meeting Presentations and task Workflow Documents and Diagrams.
+        ├── Docs           <- Folder for Task documentations, Meeting Presentations and task Workflow Documents and Diagrams.
         │
-        ├── references     <- Data dictionaries, manuals, and all other explanatory references used 
+        ├── References     <- Data dictionaries, manuals, and all other explanatory references used 
         │
-        ├── tasks          <- Master folder for all individual task folders
+        ├── Tasks          <- Master folder for all individual task folders
         │
-        ├── visualizations <- Code and Visualization dashboards generated for the project
+        ├── Visualizations <- Code and Visualization dashboards generated for the project
         │
-        └── results        <- Folder to store Final analysis and modelling results and code.
+        └── Results        <- Folder to store Final analysis and modelling results and code.
 --------
 
 ## Folder Overview
@@ -44,9 +43,9 @@
 - Docs              - Folder for Task documentations, Meeting Presentations and task Workflow Documents and Diagrams.
 - References        - Folder to store any referneced code/research papers and other useful documents used for this project
 - Tasks             - Master folder for all tasks
-  - All Task Folder names should follow specific naming convention
+  - All Task in the Tasks Folder names should follow specific naming convention
   - All Task folder names should be in chronologial order (from 1 to n)
   - All Task folders should have a README.md file with task details and task goals along with an info table containing all code/notebook files with their links and information
-  - Update the [task-table](./src/tasks/README.md#task-table) whenever a task is created and explain the purpose and goals of the task to others.
-- Visualization     - Folder to store dashboards, analysis and visualization reports
+  - Update the `Tasks` folder  whenever a task is created and explain the purpose and goals of the task to others.
+- Visualizations     - Folder to store dashboards, analysis and visualization reports
 - Results           - Folder to store final analysis modelling results for the project.
