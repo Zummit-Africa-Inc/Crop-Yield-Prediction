@@ -1,1 +1,1 @@
-Anything can be in this folder
+1. https://pbpython.com/categorical-encoding.html
