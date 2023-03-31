@@ -13,4 +13,4 @@ This is a machine learning project for the `Crop Production` Dataset. The traine
 
 1. `uvicorn app:app --reload` or `python -m uvicorn app:app --reload`
 
-2. Run `python requests.py` to test the API
+2. Run `python main.py` to test the API
