@@ -32,7 +32,7 @@ async def predict_yield(inputs: List[InputData]):
         input_df = pd.DataFrame([input_data.dict()])
         
         # Make the prediction using the loaded model
-        prediction = model.predict(input_df)[0]
+        prediction = abs(model.predict(input_df)[0])
         
         # Create an OutputData object with the prediction
         output_data = OutputData(Prediction=prediction)
