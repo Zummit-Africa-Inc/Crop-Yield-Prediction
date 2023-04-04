@@ -23,6 +23,9 @@ class OutputData(BaseModel):
 # Create the FastAPI app instance
 app = FastAPI()
 
+@app.get("/")
+async def root():
+    return {"message": "Welcome to Crop Yield Prediction!"}
 # Define the API endpoint
 @app.post("/predict", response_model=List[OutputData])
 async def predict_yield(inputs: List[InputData]):
@@ -32,7 +35,7 @@ async def predict_yield(inputs: List[InputData]):
         input_df = pd.DataFrame([input_data.dict()])
         
         # Make the prediction using the loaded model
-        prediction = model.predict(input_df)[0]
+        prediction = abs(model.predict(input_df)[0])
         
         # Create an OutputData object with the prediction
         output_data = OutputData(Prediction=prediction)
@@ -42,3 +45,6 @@ async def predict_yield(inputs: List[InputData]):
     
     # Return the list of predictions
     return predictions
+
+    if __name__ == "__main__":
+        uvicorn.run(app, host="0.0.0.0", port=8000)
