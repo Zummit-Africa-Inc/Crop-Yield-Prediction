@@ -45,6 +45,9 @@ async def predict_yield(inputs: List[InputData]):
     
     # Return the list of predictions
     return predictions
+<<<<<<< HEAD
 
     if __name__ == "__main__":
         uvicorn.run(app, host="0.0.0.0", port=8000)
+=======
+>>>>>>> b7e09c2560126a9a192e37c7061bc3a28bb69190
