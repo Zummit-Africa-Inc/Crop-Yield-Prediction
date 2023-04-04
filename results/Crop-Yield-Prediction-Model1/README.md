@@ -29,7 +29,7 @@ Once the image has been built, run the container using the following command:
 
 `docker run -p 8000:8000 crop-production-prediction-model`
 
-- This command will start a container with the name `crop-production-prediction-model`, map port 8000 from the container to port 8000 on the host, and run the crop-disease-model image.
+- This command will start a container with the name `crop-production-prediction-model`, map port `8000` from the container to port `8000` on the host, and run the `crop-production-prediction-model` image.
 
 - You can now access the API at `http://localhost:8000/docs` in your browser or using an API testing tool like Postman.
 
