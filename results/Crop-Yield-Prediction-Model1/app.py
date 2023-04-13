@@ -18,14 +18,14 @@ class InputData(BaseModel):
 
 # Define the output data schema
 class OutputData(BaseModel):
-    Prediction: float
+    Production: float
 
 # Create the FastAPI app instance
 app = FastAPI()
 
 @app.get("/")
 async def root():
-    return {"message": "Welcome to Crop Yield Prediction!"}
+    return {"message": "Welcome to Crop Production Prediction!"}
 # Define the API endpoint
 @app.post("/predict", response_model=List[OutputData])
 async def predict_yield(inputs: List[InputData]):
@@ -38,7 +38,7 @@ async def predict_yield(inputs: List[InputData]):
         prediction = abs(model.predict(input_df)[0])
         
         # Create an OutputData object with the prediction
-        output_data = OutputData(Prediction=prediction)
+        output_data = OutputData(Production=prediction)
         
         # Append the output data to the list of predictions
         predictions.append(output_data)
