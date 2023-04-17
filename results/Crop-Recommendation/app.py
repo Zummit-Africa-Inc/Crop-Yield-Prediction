@@ -1,11 +1,11 @@
+import uvicorn
+import joblib
 import pandas as pd
 import numpy as np
-import pickle
-from typing import List
+from sklearn.preprocessing import MinMaxScaler
 from fastapi import FastAPI
-from pydantic import BaseModel
-import uvicorn
 from fastapi import FastAPI, Request
+from pydantic import BaseModel
 from fastapi.responses import JSONResponse
 
 # Define the input data schema
@@ -21,17 +21,19 @@ class Features(BaseModel):
 app = FastAPI()
 
 # Load the trained model
-pickle_model = open("CRM.pkl", "rb")
-model = pickle.load(pickle_model)
+#model = lgb.Booster(model_file='CRM.txt')
+model = joblib.load("CRM.pkl")
 
+# Load the scaler
+scaler = joblib.load("scaler.pkl")
 @app.get("/")
 def root():
-    return {"Message": "Building a CROP PREDICTION API"}
+    return {"Message": "Welcome to a Crop Recommendation API"}
 
-@app.get("/Welcome")
-def get_name(name: str):
-    return {"""Hi Welcome {},  
-    This is a crop recommendation api, input your values to make Your Predictions""".format(name)}
+#@app.get("/Welcome")
+#def get_name(name: str):
+ #   return {"""Hi Welcome {},  
+  #  This is a crop recommendation api, input your values to make Your Predictions""".format(name)}
 
 @app.post("/predict") 
 def predict(data:Features):
@@ -39,15 +41,19 @@ def predict(data:Features):
     N               = data['N']
     P               = data['P']
     K               = data['K']
-    Temperature     = data['Temperature']
-    Humidity        = data['Humidity'] 
-    PH              = data['PH']
-    Rainfall        = data['Rainfall']
+    temperature     = data['temperature']
+    humidity        = data['humidity'] 
+    ph              = data['ph']
+    rainfall        = data['rainfall']
     
 
-    Crop_Prediction = model.predict([[N, P, K, Temperature, Humidity, PH, Rainfall]])
+     # Scale the input features
+    input_features = scaler.transform([[N, P, K, temperature, humidity, ph, rainfall]])
     
-    return {"The Crop Recommended is {}".format(Crop_Prediction)}
+    # Make the prediction using the scaled input features
+    crop_prediction = model.predict(input_features)
+    
+    return {"This Crop Type is {}".format(crop_prediction)}
 
 @app.exception_handler(ValueError)
 def value_error_exception_handler(request: Request, exc: ValueError):
@@ -58,8 +64,7 @@ def value_error_exception_handler(request: Request, exc: ValueError):
 
 
 if __name__ == "__main__":
-    uvicorn.run(app, host="0.0.0.0", port=8000)
-
+    uvicorn.run(app, host="127.0.0.1", port=8000)
 
 
 
