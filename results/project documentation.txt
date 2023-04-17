@@ -1,0 +1,11 @@
+
+Crop Recommendation 
+
+The main goal of the project is to use technology, mainly Artifical Intelligence in the agricultural sector.
+
+Agriculture plays a vital role in the survival of humanity, and as such, it is extremely important that as an organization with a vision of 'Democratizing AI in Africa,' 
+ZummitAfrica is prepared to play it part and take up a resposiblity in using AI in this sector.
+
+This project was created to be able to efficiently and accurately predict the best type of crop to plant in a specific environment given specific climatic and soil conditions.
+
+The datasets used are publicly available datasets.
